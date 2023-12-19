@@ -1,0 +1,140 @@
+/*---------------------------------
+**** Objects | Buttons
+-----------------------------------*/
+.rt-btn,
+.btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: thin solid transparent;
+    padding: .875rem 2rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    appearance: none;
+    font-size: $button-font-size;
+    line-height: $button-line-height;
+    font-weight: $button-font-weight;
+    color: $button-color;
+	cursor: pointer;
+    position: relative;
+    border-radius: $button-border-radius;
+}
+
+.btn {
+    background-color: $button-background-color; 
+
+    &:hover {
+        background-color: $button-background-color-hover;
+    }
+
+    @extend %btn-disabled;
+}
+
+.rt-btn-custom {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: $red;
+    border-radius: 8px;
+    padding: 1.5rem 1.5rem;
+    transition: all .35s cubic-bezier(.47,1.64,.41,.8);
+
+    span {
+        margin-right: 1rem;
+    }
+
+    svg {
+       
+        transition: all .35s cubic-bezier(.47,1.64,.41,.8);
+    }
+
+    &:hover {
+        padding-right: 2rem;
+
+        svg {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+%btn-disabled {
+    &:disabled,
+    &.disabled {
+        background-color: $button-disabled-background-color;
+
+        &:hover {
+            background-color: $button-disabled-background-color;
+        }
+    }
+}
+
+%btn-link-disabled {
+    &:disabled,
+    &.disabled {
+        color: $link-disabled-color-hover;
+
+        &:hover {
+            color: $link-disabled-color-hover;
+        }
+    }
+}
+
+.rt-btn-block {
+    display: block;
+    width: 100%;
+}
+
+.rt-btn-link {
+    color: $link-color;
+	border: none;
+    letter-spacing: 0.2em;
+    padding: 0;
+
+    &:hover {
+        color: $link-color-hover;
+    }
+
+    @extend %btn-link-disabled;
+}
+
+.rt-btn-primary {
+    background-color: $button-primary-background-color;
+    color: $button-primary-color;
+    
+    &:hover {
+        color: $button-primary-color-hover;
+        background-color: $button-primary-background-color-hover;
+        border-color: $button-primary-border-color-hover;
+    }
+
+    @extend %btn-disabled;
+}
+
+.rt-btn-secondary {
+    background-color: $button-secondary-background-color;
+    color: $button-secondary-color;
+    border-color: $button-secondary-border-color;
+    
+    &:hover {
+        color: $button-secondary-color-hover;
+        background-color: $button-secondary-background-color-hover;
+        border-color: $button-secondary-border-color-hover;
+    }
+
+    @extend %btn-disabled;
+}
+
+.rt-btn-outline-primary {
+    border-color: $button-outline-border-color;
+    color: $button-outline-color;
+    background-color: $button-outline-background-color;
+
+    &:hover {
+        border-color: $button-outline-border-color-hover;
+        color: $button-outline-color-hover;
+        background-color: $button-outline-background-color-hover;
+    }
+
+    @extend %btn-disabled;
+}

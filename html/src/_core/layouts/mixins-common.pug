@@ -1,0 +1,134 @@
+//- Icon
+mixin icon(name)
+    svg(role="img")&attributes(attributes)
+        use(xlink:href="#icon-"+name)
+
+//- WPform
+mixin wpf-input(id, label, placeholder, error=null, icon=null, required = false)
+    .wpforms-field.penn-datetime-picker(class=(icon && icon))&attributes(attributes)
+        label.wpforms-field-label(for=id)= label 
+            if required
+                span.required *
+        input(type="text" placeholder=placeholder id=id)
+        if error
+            label.wpforms-error= error
+
+mixin wpf-textarea(label, placeholder, error=null)
+    .wpforms-field.wpforms-field-textarea&attributes(attributes)
+        label.wpforms-field-label= label
+        textarea(rows="4" placeholder=placeholder)
+        if error
+            label.wpforms-error= error
+
+mixin wpf-select(label, ...items)
+    .wpforms-field.wpforms-field-select&attributes(attributes)
+        label.wpforms-field-label= label
+        select
+            each item in items
+                option= item
+
+mixin wpf-radio(name, label, error, ...items)
+    .wpforms-field.wpforms-field-radio&attributes(attributes)
+        label.wpforms-field-label= label
+            span.required *
+        ul
+            each item, key in items
+                li
+                    input(type="radio" name=name id=name+"-"+key)
+                    label(for=name+"-"+key)= item
+        if error
+            label.wpforms-error= error
+
+mixin wpf-checkbox(name, label, error, ...items)
+    .wpforms-field.wpforms-field-checkbox&attributes(attributes)
+        label.wpforms-field-label= label
+        ul
+            each item, key in items
+                li
+                    input(type="checkbox" id=name+"-"+key)
+                    label(for=name+"-"+key)= item
+        if error
+            label.wpforms-error= error
+
+//- Gravity form
+mixin g-input(id, label, placeholder, error=null)
+    li.gfield(class=(error && "gfield_error"))&attributes(attributes)
+        label.gfield_label(for=id)= label
+        .ginput_container
+            input(type="text" placeholder=placeholder id=id)
+        if error
+            .validation_message= error
+
+mixin g-select(label, ...items)
+    li.gfield&attributes(attributes)
+        label.gfield_label= label
+        .ginput_container.ginput_container_select
+            select
+                each item in items
+                    option= item
+
+mixin g-textarea(label, placeholder)
+    li.gfield&attributes(attributes)
+        label.gfield_label= label
+        .ginput_container
+            textarea.textarea(rows="4" placeholder=placeholder)
+
+mixin g-checkbox(name, label, ...items)
+    li.gfield&attributes(attributes)
+        label.gfield_label= label
+        .ginput_container.ginput_container_checkbox
+            ul.gfield_checkbox
+                each item, key in items
+                    li
+                        input(type="checkbox" id=name+"-"+key)
+                        label(for=name+"-"+key)= item
+
+mixin g-radio(name, label, ...items)
+    li.gfield&attributes(attributes)
+        label.gfield_label= label
+        .ginput_container.ginput_container_radio
+            ul.gfield_radio
+                each item, key in items
+                    li
+                        input(type="radio" name=name id=name+"-"+key)
+                        label(for=name+"-"+key)= item
+
+mixin g-upload(name, label)
+    li.gfield&attributes(attributes)
+        label.gfield_label(for= name)= label
+        .ginput_container.ginput_container_fileupload
+            input(type="file", name= name)
+            span.screen-reader-text Accepted file types: pdf, doc, docx.
+            #gform_preview_5_7
+                .ginput_preview debug.log
+            .validation_message The uploaded file type is not allowed.
+
+//- Ven form
+mixin v-input(type, id, label, placeholder, error=null)
+    .rt-form-group(class=error && "iedg-form-group--error")&attributes(attributes)
+        label.rt-form-label(for=id)= label
+        input.rt-form-control(type=type, id=id, placeholder=placeholder)
+        if error
+            span.invalid-message= error
+
+mixin v-select(label, ...items)
+    .rt-form-group&attributes(attributes)
+        label.rt-form-label= label
+        select
+            each item in items
+                option= item
+
+mixin v-textarea(label, placeholder)
+    .rt-form-group&attributes(attributes)
+        label.rt-form-label= label
+        textarea.rt-form-control(placeholder=placeholder)
+
+mixin v-checkbox(id, label, checked=false)
+    span.rt-custom-control
+        input(type="checkbox" id=id checked=checked)
+        label(for=id)= label
+
+mixin v-radio(name, id, label, checked=false)
+    span.rt-custom-control
+        input(type="radio" name=name id=id checked=checked)
+        label(for=id)= label

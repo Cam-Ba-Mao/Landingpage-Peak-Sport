@@ -1,0 +1,56 @@
+.rt-styleguide {
+    padding: 50px 0;
+
+    section {
+        margin-bottom: 40px;
+
+        > h2 {
+            margin-bottom: 10px;
+        }
+
+        .rt-btn {
+            margin-right: 4px;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.rt-demo-slider {
+    @include reset-list;
+
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+.rt-banner-heading {
+    font-weight: 600;;
+    font-size: 150px;
+    color: $white;
+    background: $red;
+
+    span {
+        position: relative;
+        display: inline-block;
+
+        &:before {
+            content: attr(data-content);
+            position: absolute;
+            color: $red;
+            right: 0;
+        }
+    
+        &:after {
+            content: attr(data-content);
+            position: absolute;
+            right: 0;
+            //color: $white;
+            height: 60%;
+            overflow: hidden;
+        }
+    }
+
+    
+}

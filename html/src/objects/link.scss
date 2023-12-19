@@ -1,0 +1,13 @@
+.rt-link {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-color-hover;
+    }
+
+    svg[role="img"] {
+        width: 12px;
+        height: 12px;
+    }
+}

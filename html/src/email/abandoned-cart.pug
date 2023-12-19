@@ -1,0 +1,35 @@
+extends _template
+
+block container
+    h2.email-heading
+        | Did you forget something?
+    .email-information
+        | Hi #[strong Name],
+        br
+        | Did you forget something during your shop?
+        br
+        | We’ve saved your bag for you!
+    table.email-order-detail
+        tbody
+            each val in [1, 2]
+                tr
+                    th.email-order-detail__image
+                        a(href="#")
+                            img(src="../images/woocommerce/product-sample-thumbnail.png" alt="")
+                    td.email-order-detail__content
+                        h2
+                            a(href="#") Medium Roast
+                        p
+                            | Size: 250 gram
+                            br
+                            | Grind: Medium
+                            br
+                            | Qty: 1
+                            br
+                            | Delivery every: Week
+                    td.email-order-detail__price $68
+    table.email-order-more
+        tbody
+            tr
+                td.email-order-more__content
+                    a.email-btn-primary(href="#") View Cart

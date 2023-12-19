@@ -1,0 +1,157 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Breakpoint
+$breakpoints: (
+    xs: 0,
+    ssm: 360px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 2000px,
+    ) !default;
+
+// Typography
+$font-family-primary: 'Poppins', Arial, Helvetica, sans-serif !default;
+
+// Colors
+$gray: #C4C4C4 !default;
+$gray-2: #E1E1E1 !default;
+$gray-3: #EDEDEE !default;
+$gray-4: #F8F9FC !default;
+
+$white: #ffffff !default;
+$white-2: #F3F3F4 !default;
+$white-3: #F8F8F8 !default;
+
+$black: #000000 !default;
+$black-1: #212121 !default;
+$black-2: #171717 !default;
+
+$red: #AE0C05 !default;
+$blue: #002349 !default;
+
+$color-E21633: #E21633;
+$color-B21818: #B21818;
+
+// Custom
+$color-FFFCE1: #FFFCE1 !default;
+$color-C0A46F: #C0A46F !default;
+$color-FAF7F0: #FAF7F0 !default;
+$bg-img-red: '../images/bg-red.jpg';
+$bg-repeat: '../images/bg-repeat.png';
+
+$danger: $red !default;
+$primary: $black !default;
+$secondary: $gray-3 !default;
+$body-color: $white !default;
+$placeholder-color: $red !default;
+
+// Forms
+$input-font-size: 16px !default;
+$input-color: $body-color !default;
+$input-background-color: $gray-4 !default;
+$input-placeholder-color: $black-1 !default;
+$input-height: 50px !default;
+$input-border-radius: 4px !default;
+$input-border-color: $white-2 !default;
+$input-border-color-focus: $white-2 !default;
+$input-border-width: 0 !default;
+$input-padding-y: 4px !default;
+$input-padding-x: 16px !default;
+$textarea-height: 150px !default;
+
+$label-font-size: 14px !default;
+$label-color: $black-1 !default;
+$label-spacing: 0 !default;
+$label-font-weight: 500 !default;
+
+$form-row-spacing: 12px !default;
+$form-col-spacing: 20px !default;
+
+$custom-control-size: 14px !default;
+$custom-control-dot-size: 8px !default;
+$custom-control-gap: 10px !default;
+$custom-control-font-size: 14px !default;
+$custom-control-font-weight: normal !default;
+$custom-control-line-height: 1.4 !default;
+$custom-control-border-color: $body-color !default;
+$custom-control-border-color-active: $body-color !default;
+$custom-control-top: 2px !default;
+
+$select-background-color: $gray-3 !default;
+$select-option-padding-y: 8px !default;
+$select-option-padding-x: 16px !default;
+$select-option-font-size: 14px !default;
+$select-option-background-color: $white !default;
+$select-option-background-color-hover: $gray !default;
+$select-arrow-width: 11px !default;
+$select-arrow-spacing: 16px !default;
+$select-arrow-icon: "data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5.5 5.5L10 1' stroke='black'/%3E%3C/svg%3E%0A" !default;
+$select-dropdown-offset: 0;
+
+$validate-message-color: $white !default;
+$validate-message-font-size: 10px !default;
+$validate-message-spacing: 6px !default;
+
+$custom-switcher-slider-width: 50px !default;
+$custom-switcher-slider-height: 16px !default;
+$custom-switcher-slider-color: $gray !default;
+$custom-switcher-slider-color-checked: $gray-2 !default;
+$custom-switcher-slider-cursor-size: 22px !default;
+$custom-switcher-slider-cursor-color: #424242 !default;
+$custom-switcher-slider-cursor-color-checked: $red !default;
+$custom-switcher-slider-label-font-size: 8px !default;
+$custom-switcher-slider-label-color: rgba($color: #000000, $alpha: 0.5) !default;
+$custom-switcher-slider-label-spacing: 2px !default;
+$custom-switcher-slider-gap: calc(($custom-switcher-slider-cursor-size - $custom-switcher-slider-height) / 2) !default;
+$custom-switcher-label-font-size: 14px !default;
+$custom-switcher-label-gap: 10px !default;
+
+// Form float label
+$form-float: true !default;
+$form-float-label-font-size: 10px !default;
+$form-float-input-padding-top: 16px !default;
+
+// Button
+$button-color: $white !default;
+$button-background-color: $red;
+$button-background-color-hover: $red;
+$button-disabled-background-color: $gray;
+$button-disabled-background-color-hover: $gray;
+$button-border-radius: 12px !default;
+
+$button-font-size: 16px !default;
+$button-font-weight: 600 !default;
+$button-line-height: 1.5 !default;
+
+$button-primary-color: $white !default;
+$button-primary-border-color: $blue !default;
+$button-primary-background-color: $blue !default;
+$button-primary-color-hover: $blue;
+$button-primary-background-color-hover: transparent;
+$button-primary-border-color-hover: $blue !default;
+
+$button-secondary-color: $white !default;
+$button-secondary-border-color: $black-1 !default;
+$button-secondary-background-color: $black-1 !default;
+$button-secondary-color-hover: $black-1 !default;
+$button-secondary-background-color-hover: transparent;
+$button-secondary-border-color-hover: $black-1 !default;
+
+$button-outline-color: $black-2 !default;
+$button-outline-border-color: $black-2 !default;
+$button-outline-background-color: transparent !default;
+$button-outline-color-hover: $white !default;
+$button-outline-background-color-hover: $black-2 !default;
+$button-outline-border-color-hover: $black-2 !default;
+
+//Link
+$link-color: $red !default;
+$link-color-hover: $red !default;
+$link-disabled-color: $gray;
+$link-disabled-color-hover: $gray;

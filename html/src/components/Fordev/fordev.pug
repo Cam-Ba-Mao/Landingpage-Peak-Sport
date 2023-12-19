@@ -1,0 +1,42 @@
+.rt-fordev
+    input#iedg-fordev-toggler(type="checkbox")
+    .rt-fordev__inner
+        label.rt-fordev__header(for="iedg-fordev-toggler") FOR DEV
+        .rt-fordev__body
+            .rt-fordev__title
+                .rt-custom-control
+                    input(type="checkbox" id="enable-admin-bar")
+                    label(for="enable-admin-bar") Admin bar
+            .rt-fordev__content
+                -
+                    devNav = [
+                        {
+                            "name": "Style Guide",
+                            "url": "./styleguide.html"
+                        },
+                        {
+                            "name": "General",
+                            "url": "./general.html"
+                        },
+                        {
+                            "name": "Home",
+                            "url": "./index.html"
+                        },
+                        {
+                            "name": "Home Cui",
+                            "url": "./homecui.html"
+                        },
+                        {
+                            "name": "Home Hieu",
+                            "url": "./index2.html"
+                        },
+                        {
+                            "name": "Thank you",
+                            "url": "./thank-you.html"
+                        },
+                    ]
+                    
+                ul.rt-fordev-list
+                    each val in devNav
+                        li
+                            a(href= val["url"])= val["name"]

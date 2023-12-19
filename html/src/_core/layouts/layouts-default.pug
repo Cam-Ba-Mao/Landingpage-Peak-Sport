@@ -1,0 +1,105 @@
+include ./mixins-common
+
+block vars
+    -title = "Title"
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title=title
+        // Favicon
+        link(rel="icon" href="./images/favicon.png")
+        // Bootstrap
+        link(rel="stylesheet" href="./css/bootstrap.min.css")
+        // Plugins style
+        link(rel="stylesheet" href="./css/bundle.min.css")
+        // Template syle
+        link(rel="stylesheet" href="./css/main.css")
+        // Admin bar demo ( Not include )
+        style.
+            .admin-bar-html {
+                margin-top: 32px !important;
+            }
+
+            @media screen and (max-width: 782px) {
+                .admin-bar-html {
+                    margin-top: 46px !important;
+                }
+            }
+
+            #wpadminbar {
+                direction: ltr;
+                color: #ccc;
+                font-size: 13px;
+                font-weight: 400;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+                height: 32px;
+                line-height: 32px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-width: 600px;
+                z-index: 99999;
+                background: #23282d;
+                padding: 0 15px;
+            }
+
+            @media screen and (max-width: 782px) {
+                html #wpadminbar {
+                    height: 46px;
+                    line-height: 46px;
+                    min-width: 240px;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                #wpadminbar {
+                    position: absolute;
+                }
+            }
+
+    body(class=(bodyClass && bodyClass))
+        .rt-container
+            // START HEADER
+            include ../../components/Header/header
+            // CLOSE HEADER
+
+            // START CONTENT
+            main.rt-content
+                block container
+            // CLOSE CONTENT
+
+            // START FOOTER
+            include ../../components/Footer/footer
+
+            // CLOSE FOOTER
+
+        // ForDev
+        include ../../components/Fordev/fordev
+
+        // Jquery
+        script(src="./js/jquery.min.js")
+
+        //- <script src="https://apis.google.com/js/platform.js?onload=onLoadGoogleCallback" async defer></script>
+        //- <script data-src="https://maps.google.com/maps/api/js?libraries=places&amp;key=AIzaSyBrqJ3COcBz3ZY7ZHRx0N_Fd0Xq_ea49O4" id="google-map"></script>
+        //- <script src='https://unpkg.com/gsap@3.11.5/dist/gsap.min.js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+        <script src='https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/649d94a36132f40204429b58_ScrambleTextPlugin.min.txt'></script>
+
+        // Bootstrap
+        script(src="./js/popper.min.js")
+        script(src="./js/bootstrap.min.js")
+        // Plugins script
+        script(src="./js/bundle.min.js")
+        // Template script
+        script(src="./js/scripts.min.js")
+        // Scripts demo ( Not include )
+        block scripts_demo
+
+        // Icon sprites
+        include ./icon-sprites.html

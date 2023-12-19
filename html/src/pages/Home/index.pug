@@ -1,0 +1,31 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "page-template-home is-transparent"
+    -typeMenu = ""
+
+block container
+    section.peak-banner 
+        .container
+            .peak-banner__wrap 
+                .peak-banner__left
+                    h3.peak-title.peak-title__small PEAK SPORT
+                    h1.peak-title VÒNG QUAY MAY MẮN
+                    .peak-banner__left--desc Nhận ngay deal khuyến mãi khi thử thách tham gia vòng xoay may mắn cùng PEAK SPORT.
+                        <br> *Áp dụng mã cho các sản phẩm bên dưới
+                .peak-banner__center 
+                    img.lazy(data-src="./images/home/vong-quay.png" alt="")
+                .peak-banner__right 
+                    .peak-banner__right--title Bạn nhận được khuyến mãi 50% gửi qua email 
+                    .peak-banner__right--cta 
+                        a(href="#" class="rt-btn rt-btn-primary") Nhận khuyến mãi
+                        .text Bạn còn 1 lượt quay
+                
+    section.peak-sale-shock 
+        .container 
+            .peak-sale-shock__wrap 
+                .peak-title SALE SHOCK <br> SALE SHOCK <br> SALE SHOCK
+    
+
+
+                    

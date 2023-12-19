@@ -1,0 +1,79 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "page-template-styleguide"
+
+block scripts_demo
+    script.
+        $('.rt-demo-slider').slick({
+            lazyLoad: 'ondemand',
+            slidesToShow: 1,
+            dots: true,
+            arrows: true
+        });
+
+block container
+    .rt-styleguide
+        .container
+            //- Slider
+            section
+                -
+                    demoSlider = [
+                        "https://images.unsplash.com/photo-1485546784815-e380f3297414?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+                        "https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                    ]
+                ul.rt-demo-slider
+                    each val in demoSlider
+                        li
+                            img(data-lazy= val alt="")
+            //- Heading
+            section
+                h1.heading-primary 	h1. IEDG heading
+                h2.heading-primary 	h2. IEDG heading
+                h3.heading-primary 	h3. IEDG heading
+                h4.heading-primary 	h4. IEDG heading
+                h5.heading-primary 	h5. IEDG heading
+                h6.heading-primary 	h6. IEDG heading
+            //- Buttons
+            section
+                button.rt-btn.rt-btn-primary Button primary
+                button.rt-btn.rt-btn-outline-primary Button outline primary
+                button.rt-btn.rt-btn-primary.is-loading Button primary
+                button.rt-btn.rt-btn-primary(disabled) Button disabled
+                button.rt-btn.rt-btn-link Button link
+                button.rt-btn.rt-btn-link(disabled) Button link disabled
+                a(href="#" class="iedg-link") link
+
+            //- WPForms
+            section
+                h2 WPForms Forms
+                .wpforms-container.wpforms-container-full
+                    form(action="./styleguide.html" class="wpforms-validate wpforms-form wpforms-ajax-form")
+                        .wpforms-field-container
+                            +wpf-input("wpf-input-1", "Input label", "Input place holder", "Validation message")
+                            +wpf-textarea("Text area", "Type your message here", "Validation message")
+                            +wpf-select("Select box", "Option 1", "Option 2", "Option 3")
+                            +wpf-checkbox("wpf-checkbox", "Check box", "Validation message", "Item 1", "Item 2")
+                            +wpf-radio("wpf-radio", "Radio", "Validation message", "Item 1", "Item 2")
+                        .wpforms-submit-container
+                            button(type="submit" class="wpforms-submit" data-alt-text="Sending..." data-submit-text="Submit") Gửi thông tin
+            //- Forms
+            section
+                h2 Form
+                form(action="./styleguide.html")
+                    +v-input("text", "v-input-1", "Input label", "Input place holder", "Validation message")
+                    +v-input("text", "v-input-2", "Input disabled", "Input disabled")(disabled)
+                    +v-textarea("Text area", "Text area place holder")
+                    .rt-form-group.clear_label
+                        .rt-form-label Check box
+                        +v-checkbox("v-checkbox-1", "Check box 1")
+                    .rt-form-group.clear_label
+                        .rt-form-label Radio
+                        +v-radio("v-radio", "v-radio-1", "Radio 1")
+                        +v-radio("v-radio", "v-radio-2", "Radio 2")
+                    .rt-form-group.clear_label
+                        .rt-form-label Switcher
+                        label.rt-custom-switcher
+                            input(type="checkbox")
+                            span.rt-custom-switcher__slider
+                            span.rt-custom-switcher__label Custom switcher

@@ -1,0 +1,104 @@
+body.error404 {
+    .iedg-container {
+        min-height: min-content;
+    }
+
+    .penn-footer {
+        display: none;
+    }
+}
+
+.penn-404 {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+
+    @include breakpoint-up(md) {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
+
+    .row {
+        flex-direction: column-reverse;
+
+        @include breakpoint-up(md) {
+            flex-direction: row;
+        }
+    }
+
+    h1 {
+        color: $white;
+        font-weight: 700;
+        font-size: 48px;
+        font-family: $font-family-primary;
+        margin-bottom: 0;
+
+        @include breakpoint-up(md) {
+            font-size: 64px;
+        }
+
+        @include breakpoint-up(lg) {
+            font-size: 100px;
+        }
+
+        @include breakpoint-up(xl) {
+            font-size: 140px;
+        }
+    }
+
+    .penn-sub-title {
+        font-weight: 500;
+        font-size: 24px;
+        font-family: $font-family-primary;
+        line-height: 1.2;
+
+        @include breakpoint-up(md) {
+            font-size: 40px;
+        }
+
+        @include breakpoint-up(lg) {
+            font-size: 50px;
+        }
+
+        @include breakpoint-up(xl) {
+            font-size: 54px;
+        }
+    }
+
+
+    &__image {
+        width: 100%;
+        margin-bottom: 3rem;
+
+        @include breakpoint-up(md) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__desc {
+        margin-top: 8px;
+
+        text-align: left;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+
+        @include breakpoint-up(sm) {
+            font-size: 18px;
+        }
+
+        @include breakpoint-up(md) {
+            max-width: 540px;
+        }
+    }
+
+    &__cta {
+        .rt-btn {
+            padding: .875rem 3rem;
+            border-radius: 16px;
+            font-weight: 600;
+
+            @include breakpoint-up(md) {
+                font-size: 18px;
+            }
+        }
+    }
+}

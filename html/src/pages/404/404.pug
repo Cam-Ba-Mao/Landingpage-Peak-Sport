@@ -1,0 +1,31 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "page-template-404"
+
+block container
+
+    //- 404
+    section.penn-404
+        .container 
+            .row
+                .col-md-6
+                    h1 404
+                    .penn-sub-title Trang không tồn tại
+                    
+                    .penn-404__desc Chúng tôi xin lỗi, không thể tìm thấy trang bạn yêu cầu.
+                    
+                    .penn-404__cta 
+                        a(href="#" class="rt-btn rt-btn-primary") Quay lại
+
+                .col-md-6
+                    .penn-404__image 
+                        img.lazy(data-src="./images/404.svg" alt="404")
+                
+                
+                    
+                
+                
+                
+
+                

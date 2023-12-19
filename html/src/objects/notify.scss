@@ -1,0 +1,33 @@
+/*---------------------------------
+**** Objects | Notify
+-----------------------------------*/
+.rt-noti {
+    position: fixed;
+    top: 12vh;
+    right: 60px;
+    z-index: 100;
+    min-width: 250px;
+    padding: 15px;
+    background: $red;
+    color: white;
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    transition: 0.4s ease;
+
+    &.opening {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        z-index: 9999;
+
+        .woocommerce-error {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    @include breakpoint-down(md) {
+        width: 90%;
+        right: 5%;
+    }
+}

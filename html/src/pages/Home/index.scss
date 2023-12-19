@@ -1,0 +1,70 @@
+.peak-banner {
+    // height: 100vh;
+    margin-top: var(--mh);
+    padding-top: 3.75rem;
+    padding-bottom: 5.625rem;
+
+    .peaks-title {
+        &__small {
+            background: linear-gradient(90deg, #FFFFFF 30.69%, rgba(251, 124, 99, 0) 150.31%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            // -webkit-text-stroke-width: 1px;
+            // -webkit-text-stroke-color: #fff;
+        }
+    }
+
+    &__wrap {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(1, 1fr);
+
+        @include breakpoint-up(lg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__left {
+        &--desc {
+            color: $white;
+            font-size: 22px;
+        }
+    }
+
+    &__right {
+        text-align: center;
+        color: $white;
+
+        &--title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .rt-btn-primary {
+            font-size: 25px;
+            font-weight: 700;
+            background: linear-gradient(93deg, #E21633 2.58%, rgba(226, 22, 51, 0.00) 155.06%);
+            border: transparent;
+
+            &:hover {
+              
+                color: $white;
+            }
+        }
+
+        .text {
+            margin-top: 10px;
+        }
+    }
+}
+
+.peak-sale-shock {
+    &__wrap {
+        max-width: 454px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

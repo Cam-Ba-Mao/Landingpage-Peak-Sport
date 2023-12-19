@@ -1,0 +1,18 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "page-template-thank-you"
+    -typeMenu = "" 
+
+block container
+  
+    section.penn-thank-you
+        .container 
+            .penn-thank-you__inner
+                .penn-thank-you__image 
+                    img.lazy(data-src="./images/thank-you.svg" alt="404")
+
+                h1 Gửi bài dự thi thành công!
+
+                .penn-thank-you__cta 
+                    a(href="./index.html" class="rt-btn rt-btn-primary") Quay lại

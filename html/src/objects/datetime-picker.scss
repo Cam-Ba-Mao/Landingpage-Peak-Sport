@@ -1,0 +1,51 @@
+.xdsoft_datetimepicker {
+    .xdsoft_label {
+        & > .xdsoft_select {
+            & > div {
+                & > .xdsoft_option {
+
+                    &:hover {
+                        background: $red;
+                    }
+
+                    &.xdsoft_current {
+                        background: $red;
+                        box-shadow: $red 0 1px 3px 0 inset; 
+                    }
+                }
+            }
+        }
+    }
+
+    .xdsoft_calendar {
+        td {
+            &.xdsoft_current,
+            &.xdsoft_default {
+                background: $red;
+                box-shadow: $red 0 1px 3px 0 inset;
+            }
+
+            &:hover {
+                background: $red !important;
+            }
+        }   
+    }
+
+    .xdsoft_timepicker {
+        .xdsoft_time_box {
+            & > div {
+                & > div {
+                    &:hover {
+                        background: $red !important;
+                    }
+
+                    &.xdsoft_current {
+                        background: $red;
+                        box-shadow: $red 0 1px 3px 0 inset;
+                    }
+                }
+            }
+
+        }
+    }
+}

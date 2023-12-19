@@ -1,0 +1,130 @@
+// Breakpoint
+@mixin breakpoint-up($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin breakpoint-down($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin ie11() {
+    @media all and (-ms-high-contrast: none) {
+        @content;
+    }
+}
+
+// Wordpress adminbar
+@mixin wp-admin-bar() {
+    body.admin-bar & {
+        margin-top: 46px;
+
+        @media screen and (min-width: 783px) {
+            margin-top: 32px;
+        }
+    }
+}
+
+// Image drop
+@mixin img-drop($width, $height: null) {
+    @if ($height) {
+        height: 0;
+        padding-bottom: ($height/$width) * 100%;
+    } @else {
+        height: $width;
+    }
+}
+
+// Truncate text
+@mixin truncate($font-size: null, $line-height: null, $lines-to-show: 1) {
+    @if ($font-size and $line-height and $lines-to-show > 1) {
+        font-size: $font-size;
+        line-height: $line-height;
+        display: -webkit-box;
+        max-height: $font-size * $line-height * $lines-to-show;
+        -webkit-line-clamp: $lines-to-show;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    } @else {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+// Make gutters spacing
+@mixin gutters($spacing) {
+    margin-right: -($spacing/2);
+    margin-left: -($spacing/2);
+
+    > .col,
+    > [class*="col-"] {
+        padding-right: ($spacing/2);
+        padding-left: ($spacing/2);
+    }
+}
+
+// Reset style for ul
+@mixin reset-list {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+// Reset Autofill
+@mixin reset-autofill($color: $body-color) {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-text-fill-color: $color;
+		transition: background-color 5000s ease-in-out 0s;
+    }
+}
+
+// Set icon size
+@mixin icon-size($size) {
+    svg[role="img"] {
+        width: $size;
+        height: $size;
+        @content;
+    }
+}
+
+// hide scrollbar
+@mixin hide-scrollbar {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@mixin touch-screen() {
+    @media (hover: none) and (pointer: coarse) {
+        @content;
+    }
+}
+
+@mixin portrait-screen() {
+    @media screen and (orientation:portrait) {
+        @content;
+    }
+}
