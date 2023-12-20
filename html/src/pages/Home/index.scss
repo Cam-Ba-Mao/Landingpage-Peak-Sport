@@ -120,7 +120,7 @@
 
         .peak-title {
             position: relative;
-            background: $color-B21818;
+            background: linear-gradient(180deg, #9e1615 0%, #981515 100%);
             display: inline-block;
             line-height: 1;
 
@@ -135,7 +135,13 @@
 }
 
 .peak-product {
-    margin-top: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    @include breakpoint-up(lg) {
+        margin-top: 6rem;
+        margin-bottom: 4rem;
+    }
 
     &__item {
         &:not(:last-child) {

@@ -24,7 +24,7 @@ body {
     color: $black;
     position: relative;
     background: linear-gradient(180deg, #B21818 0%, #000 100%);
-    background: $color-B21818;
+    // background: $color-B21818;
     font-family: $font-family-primary;
 
     &.is-lock {
