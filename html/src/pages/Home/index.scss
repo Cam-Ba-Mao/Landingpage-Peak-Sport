@@ -1,12 +1,16 @@
 .peak-banner {
-    // height: 100vh;
     margin-top: var(--mh);
-    padding-top: 3.75rem;
-    padding-bottom: 5.625rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
 
-    .peaks-title {
+    @include breakpoint-up(lg) {
+        padding-top: 3.75rem;
+        padding-bottom: 5.625rem;
+    }
+
+    .peak-title {
         &__small {
-            background: linear-gradient(90deg, #FFFFFF 30.69%, rgba(251, 124, 99, 0) 150.31%);
+            background: linear-gradient(90deg, #FFFFFF 20.69%, rgba(251, 124, 99, 0) 54.31%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -18,19 +22,36 @@
 
     &__wrap {
         display: grid;
-        gap: 24px;
+        gap: 1rem;
         grid-template-columns: repeat(1, 1fr);
 
         @include breakpoint-up(lg) {
             grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            gap: 24px;
         }
     }
 
     &__left {
         &--desc {
             color: $white;
-            font-size: 22px;
+            font-size: 16px;
+
+            @include breakpoint-up(md) {
+                font-size: 18px;
+            }
+
+            @include breakpoint-up(lg) {
+                font-size: 22px;
+            }
         }
+    }
+
+    &__center {
+        
+        &--image {
+            // box-shadow: 0px 5px 21px 0px rgba(0, 0, 0, 0.95);
+        }        
     }
 
     &__right {
@@ -38,16 +59,32 @@
         color: $white;
 
         &--title {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 700;
             margin-bottom: 1rem;
+
+            @include breakpoint-up(md) {
+                font-size: 32px;
+            }
+
+            @include breakpoint-up(lg) {
+                font-size: 36px;
+            }
         }
 
         .rt-btn-primary {
-            font-size: 25px;
+            font-size: 18px;
             font-weight: 700;
             background: linear-gradient(93deg, #E21633 2.58%, rgba(226, 22, 51, 0.00) 155.06%);
             border: transparent;
+
+            @include breakpoint-up(md) {
+                font-size: 25px;
+            }
+
+            @include breakpoint-up(lg) {
+                font-size: 25px;
+            }
 
             &:hover {
               
@@ -63,8 +100,370 @@
 
 .peak-sale-shock {
     &__wrap {
-        max-width: 454px;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: center;
+        position: relative;
+
+        &::before {
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 41px;
+            content: "";
+            position: absolute;
+            transform: translateY(-50%);
+            border-bottom: 41px solid $white;
+
+            @include breakpoint-down(lg) {
+                display: none !important;
+            }
+        }
+
+        .peak-title {
+            position: relative;
+            background: $color-B21818;
+            display: inline-block;
+            line-height: 1;
+
+            @include breakpoint-up(lg) {
+                padding-left: 2.875rem;
+                padding-right: 2.875rem;
+                
+            }
+        }
+
+    }
+}
+
+.peak-product {
+    margin-top: 6rem;
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+
+            @include breakpoint-up(lg) {
+                margin-bottom: 6rem;
+            }
+        }
+
+        &:nth-child(even) {
+            .peak-product {
+                &__item {
+                    &--head {
+                        
+                        @include breakpoint-up(lg) {
+                            flex-direction: row-reverse;
+
+                            .product-info {
+                                text-align: left;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        &--head {
+            margin-bottom: 6rem;
+            display: flex;
+            gap: 1rem;
+            
+            @include breakpoint-down(lg) {
+                flex-direction: column;
+                margin-bottom: 2rem;
+            }
+
+            .img-product {
+                flex-basis: 50%;
+                position: relative;
+
+                @include breakpoint-down(lg) {
+                    margin-bottom: 2rem;
+                }
+
+                img {
+                    max-width: 460px;
+                    width: 100%;
+                }
+                
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 12%;
+                    background: var(--data-bg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    z-index: -1;
+                    
+                }
+
+                &__star {
+                    padding: 14px;
+                    border-radius: 10px;
+                    background: linear-gradient(120deg, #050505 31.87%, rgba(5, 5, 5, 0.00) 127.44%);
+                    display: inline-block;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+
+                    @include breakpoint-up(md) {
+                        right: 20%;
+                    }
+
+                    @include breakpoint-up(lg) {
+                        right: 4%;
+                    }
+
+                    @include breakpoint-up(xl) {
+                        right: 26%;
+                    }
+
+                    &--text {
+                        margin-top: 10px;
+                        font-size: 16px;
+                        color: $white;
+
+                        @include breakpoint-up(md) {
+                            font-size: 18px;
+                        }
+
+                        @include breakpoint-up(lg) {
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .star-rating {
+                    overflow: hidden;
+                    position: relative;
+                    height: 1em;
+                    line-height: 1;
+                    font-size: 16px;
+                    width: 6.1em;
+                    font-family: star;
+                    letter-spacing: 0.2em;
+
+                    @include breakpoint-up(md) {
+                        font-size: 20px;
+                    }
+
+                    &::before {
+                        content: "sssss";
+                        float: left;
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                        color: #FC4135;
+                    }
+
+                    span {
+                        overflow: hidden;
+                        float: left;
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                        padding-top: 1.5em;
+
+                        &::before {
+                            content: "SSSSS";
+                            top: 0;
+                            position: absolute;
+                            left: 0;
+                            color: #FC4135;
+                        }
+                    }
+                }
+            }
+
+            .product-info {
+                color: $white;
+                flex-basis: 50%;
+
+                @include breakpoint-up(lg) {
+                    text-align: right;
+                }
+
+                &__category-name {
+                    a {
+                        color: $white;
+                        font-size: 24px;
+                        font-weight: 700;
+
+                        @include breakpoint-up(md) {
+                            font-size: 32px;
+                        }
+            
+                        @include breakpoint-up(lg) {
+                            font-size: 36px;
+                        }
+                    }
+                 
+                }
+
+                &__desc {
+                    font-size: 16px;
+
+                    @include breakpoint-up(md) {
+                        font-size: 18px;
+                    }
+        
+                    @include breakpoint-up(lg) {
+                        font-size: 22px;
+                    }
+                }
+
+                &__price {
+                    margin-top: 2.25rem;
+
+                    @include breakpoint-up(lg) {
+                        margin-top: 3.25rem;
+                    }
+
+                    &--sale {
+                        font-size: 32px;
+                        font-weight: 700;
+
+                        @include breakpoint-up(sm) {
+                            font-size: 48px;
+                        }
+
+                        @include breakpoint-up(md) {
+                            font-size: 54px;
+                        }
+
+                        @include breakpoint-up(lg) {
+                            font-size: 64px;
+                        }
+            
+                        @include breakpoint-up(xl) {
+                            font-size: 80px;
+                        }
+                    }
+
+                    &--regular {
+                        font-size: 18px;
+                        font-weight: 400;
+
+                        @include breakpoint-up(md) {
+                            font-size: 20px;
+                        }
+
+                        @include breakpoint-up(lg) {
+                            font-size: 25px;
+                        }
+                    }
+                }
+
+                &__cta {
+                    margin-top: 1rem;
+
+                    .rt-btn-primary {
+                        border-radius: 20px;
+                        background: linear-gradient(93deg, #E21633 2.58%, rgba(226, 22, 51, 0.00) 155.06%);
+                        border: transparent;
+
+                        &:hover {
+                            color: $white;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        &--viewmore {
+            text-align: right;
+
+            a {
+                color: $white;
+                font-size: 18px;
+                font-weight: 700;
+                
+                @include breakpoint-up(md) {
+                    font-size: 24px;
+                }
+
+                @include breakpoint-up(lg) {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        &--body {
+            margin-top: 2rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(2,1fr);
+
+            @include breakpoint-up(xl) {
+                grid-template-columns: repeat(4,1fr);
+            }
+
+            .product-item {
+                color: $white;
+
+                &__image {
+                    padding: 1rem;
+                    border-radius: 10px;
+                    background: $white;
+                    margin-bottom: 8px;
+                }
+
+                &__name {
+                    font-size: 18px;
+                    font-weight: 700;
+                    
+                    a {
+                        color: $white;
+                    }
+
+                    @include breakpoint-up(lg) {
+                        font-size: 22px;
+                        text-align: center;
+                    }
+                }
+
+                &__footer {
+                    margin-top: 1rem;
+                    display: flex;
+                    gap: 1rem;
+
+                    @include breakpoint-down(md) {
+                        flex-direction: column;
+                    }
+                }
+
+                &__price {
+                    
+                    flex-grow: 1;
+
+                    &--regular {
+                        font-size: 14px;
+                    }
+
+                    &--sale {
+                        font-size: 16px;
+                        font-weight: 700;
+
+                        @include breakpoint-up(lg) {
+                            font-size: 18px;
+                        }
+
+                        @include breakpoint-up(lg) {
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                &__cart {
+                    flex-shrink: 0;
+                }
+            }
+        }
     }
 }

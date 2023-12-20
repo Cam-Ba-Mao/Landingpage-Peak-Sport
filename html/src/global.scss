@@ -24,6 +24,7 @@ body {
     color: $black;
     position: relative;
     background: linear-gradient(180deg, #B21818 0%, #000 100%);
+    background: $color-B21818;
     font-family: $font-family-primary;
 
     &.is-lock {
@@ -371,14 +372,18 @@ input[type="search"] {
 }
 
 .peak-title {
-    font-size: 65px;
+    font-size: 48px;
     font-weight: 700;
     color: $white;
-    line-height: normal;
+    // line-height: normal;
 
-    // @include breakpoint-up(lg) {
-    //     font-size: 3rem;
-    // }
+    @include breakpoint-up(lg) {
+        font-size: 56px;
+    }
+
+    @include breakpoint-up(xl) {
+        font-size: 65px;
+    }
 
     &__small {
         font-size: 30px;

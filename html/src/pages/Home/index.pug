@@ -14,7 +14,9 @@ block container
                     .peak-banner__left--desc Nhận ngay deal khuyến mãi khi thử thách tham gia vòng xoay may mắn cùng PEAK SPORT.
                         <br> *Áp dụng mã cho các sản phẩm bên dưới
                 .peak-banner__center 
-                    img.lazy(data-src="./images/home/vong-quay.png" alt="")
+                    .peak-banner__center--image
+                        img.lazy(data-src="./images/home/vong-quay.png" alt="")
+                        
                 .peak-banner__right 
                     .peak-banner__right--title Bạn nhận được khuyến mãi 50% gửi qua email 
                     .peak-banner__right--cta 
@@ -26,6 +28,76 @@ block container
             .peak-sale-shock__wrap 
                 .peak-title SALE SHOCK <br> SALE SHOCK <br> SALE SHOCK
     
+    section.peak-product 
+        .container 
+            -
+                items = [
+                    {
+                        'img' : 'giay-bong-ro',
+                        'bg' : '1',
+                        'category' : 'Giầy bóng rổ',
+                        'name' : 'Basketball ET21493A',
+                    },
+                    {
+                        'img' : 'giay-the-thao',
+                        'bg' : '2',
+                        'category' : 'Giầy thể thao',
+                        'name' : 'NAME SHOES',
+                    },
+                    {
+                        'img' : 'quan-ao-the-thao',
+                        'bg' : '3',
+                        'category' : 'Quần áo thể thao',
+                        'name' : 'NAME',
+                    },
+                    {
+                        'img' : 'giay-chay-bo',
+                        'bg' : '4',
+                        'category' : 'Giầy chạy bộ',
+                        'name' : 'NAME SHOES',
+                    },
+                                                                     
+                ]
 
+            each val in items
+                .peak-product__item 
+                    .peak-product__item--head 
+                        .img-product(style="--data-bg: url('../images/home/bg-product-"+val.bg+".png');") 
+                            //- .background(style="background: url('../images/home/bg-product-1.png')")
+                            img.lazy(data-src="./images/home/"+val.img+".png" alt="")
+                            .img-product__star
+                                .star-rating(role="img" aria-label="Rated 4 out of 5")
+                                    span(style="width:80%") 
+                                .img-product__star--text 5 out of 5
+                        .product-info 
+                            .product-info__category-name 
+                                a(href="#") #{val.category}
+                            .peak-title #{val.name}
+                            .product-info__desc Giày thẻ thao năng động , thoáng khí giúp tăng khả năng tăng tốc của người sử dụng nhờ công nghệ lớp đệm đàn hồi
+                            .product-info__price
+                                .product-info__price--regular 2.390.000 VND
+                                .product-info__price--sale 1.195.000 VND
+                            .product-info__cta 
+                                a(href="#" class="rt-btn rt-btn-primary") Thêm vào giỏ hàng
+                    .peak-product__item--viewmore 
+                        a(href="#") Xem thêm >
+                    .peak-product__item--body 
+                        -
+                            items = [1,2,3,4]
+
+                        each val in items
+                            .product-item 
+                                .product-item__image 
+                                    a(href="#") 
+                                        img(src="./images/home/giay-bong-ro-"+val+".png" alt="")
+                                .product-item__name 
+                                    a(href="#") NAME PRODUCT
+                                .product-item__footer
+                                    .product-item__price
+                                        .product-item__price--regular 2.390.000 VND
+                                        .product-item__price--sale 1.195.000 VND 
+                                    .product-item__cart 
+                                        a(href="#")
+                                            img.lazy(data-src="./images/home/add-cart-product.svg" alt="") 
 
                     
